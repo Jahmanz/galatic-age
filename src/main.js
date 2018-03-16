@@ -26,16 +26,5 @@ $(document).ready(function(){
     let userDateJupiter = userDate.ageOnJupiter();
     $('#ageJupiter').text(userDateJupiter);
 
-
-    // let userTimeEarth = userDate.yearsLeftEarth();
-    // $('#timeLeftEarth').text(userTimeEarth);
-    // let userTimeMercury = userDate.yearsLeftMercury();
-    // $('#timeLeftMercury').text(userTimeMercury);
-    // let userTimeVenus = userDate.yearsLeftVenus();
-    // $('#timeLeftVenus').text(userTimeVenus);
-    // let userTimeMars = userDate.yearsLeftMars();
-    // $('#timeLeftMars').text(userTimeMars);
-    // let userTimeJupiter = userDate.yearsLeftJupiter();
-    // $('#timeLeftJupiter').text(userTimeJupiter);
   });
 });
