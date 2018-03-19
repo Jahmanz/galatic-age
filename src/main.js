@@ -1,4 +1,4 @@
-import { Date } from './galatic-age.js';
+import { Date } from '../js/galatic-age.js';
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
