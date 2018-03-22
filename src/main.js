@@ -5,26 +5,24 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 $(document).ready(function(){
-  $('#date').submit(function(event){
+  $('#age').submit(function(event){
     event.preventDefault();
-    $('#dateShow').text();
+    $('#dateShow').text(moment());
 
     let birthdate = $('#birthdate').val();
 
-
     $('#birthdateShow').text(birthdate);
-    let userDate = new Date(birthdate);
 
-    let userDateEarth = userDate.earth();
-    $('#ageEarth').text(userDateEarth);
-    let userDateMercury = userDate.mercury();
-    $('#ageMercury').text(userDateMercury);
-    let userDateVenus = userDate.venus();
-    $('#ageVenus').text(userDateVenus);
-    let userDateMars = userDate.mars();
-    $('#ageMars').text(userDateMars);
-    let userDateJupiter = userDate.jupiter();
-    $('#ageJupiter').text(userDateJupiter);
-
+    let userAge = new Age(birthdate);
+    let userAgeEarth = userAge.ageInYears();
+    $('#ageEarth').text(userAgeEarth);
+    let userAgeMercury = userAge.ageOnMercury();
+    $('#ageMercury').text(userAgeMercury);
+    let userAgeVenus = userAge.ageOnVenus();
+    $('#ageVenus').text(userAgeVenus);
+    let userAgeMars = userAge.ageOnMars();
+    $('#ageMars').text(userAgeMars);
+    let userAgeJupiter = userAge.ageOnJupiter();
+    $('#ageJupiter').text(userAgeJupiter);
   });
 });
