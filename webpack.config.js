@@ -46,10 +46,10 @@ module.exports = {
           /node_modules/,
           /spec/
         ],
-        loader: "babel-loader",
-        options: {
-          presets: ['es2015']
-        }
+        // loader: "babel-loader",
+        // options: {
+        //   presets: ['es2015']
+        // }
       }
     ]
   }

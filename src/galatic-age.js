@@ -1,39 +1,42 @@
 export class Age {
-  constructor(birthdate) {
+  constructor(birthdate, gender) {
     this.birthdate = birthdate;
-  }
+    this.gender = gender;
+    }
 
-  ageInYears() {
-    let birthday = this.birthdate;
-    let year = birthday.slice(0,4);
-    let month = birthday.slice(5,7);
-    let day = birthday.slice(8,10);
-    let date = month + '/' + day + '/' + year + ' 00:00:00';
-    let newDate = new Date(date);
-    let milliBirthday = newDate.getTime();
-    let milliNow = Date.now();
-    let ageInSeconds = (milliNow - milliBirthday)/1000;
-    let ageInYears = Math.floor(ageInSeconds/31557600);
+
+  ageOnEarth() {
+    const birthdate = new Date(this.birthdate);
+    let today = new Date();
+    let calcAge = today - birthdate;
+    let ageInYears = Math.floor(calcAge/(365.25 * 24 * 60 * 60 * 1000 ));
     return ageInYears;
   }
 
-  ageOnMercury() {
-    let mercuryAge = Math.round(this.ageInYears() / 0.24);
-    return mercuryAge;
-
+  seconds(){
+    let ageInSecs = parseInt(this.ageOnEarth() * 365 * 24 * 60 * 60);
+    return ageInSecs;
   }
+
+
+  ageOnMercury() {
+    let mercuryAge = parseInt(this.ageOnEarth()/0.24); =
+    return mercuryAge;
+  }
+
   ageOnVenus() {
-    let venusAge = Math.round(this.ageInYears() / 0.62);
+    let venusAge = parseInt(this.ageOnEarth()/0.62);
     return venusAge;
   }
 
   ageOnMars() {
-    let marsAge = Math.round(this.ageInYears() / 1.88);
+    let marsAge = parseInt(this.ageOnEarth()/1.88);
     return marsAge;
   }
 
   ageOnJupiter() {
-    let marsAge = Math.round(this.ageInYears() / 11.86);
-    return marsAge;
+    let jupiterAge = parseInt(this.ageOnEarth()/11.86);
+    return jupiterAge;
   }
-}
+
+    }
