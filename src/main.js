@@ -8,9 +8,9 @@ $(document).ready(function () {
     $("#galaticage").submit(function (event) {
     event.preventDefault();
     let birthdate = $('#birthdate').val();
+    let gender = $('#gender').val();
 
-
-    $(".dateShow").show('.birthdateShow');
+    $(".results").show('.solarage');
 
     let newUser = new Age(birthdate, gender);
 
@@ -29,6 +29,16 @@ $(document).ready(function () {
     let jupiter = newUser.ageOnJupiter();
     $('#ageJupiter').text(jupiter);
 
+    let mercuryExpectancy = newUser.lifeExpectancyOnMercury();
+    $('#mercurylife').text(mercuryExpectancy);
 
+    let venusExpectancy = newUser.lifeExpectancyOnVenus();
+    $('#venuslife').text(venusExpectancy);
+
+    let marsExpectancy = newUser.lifeExpectancyOnMars();
+    $('#marslife').text(marsExpectancy);
+
+    let jupiterExpectancy = newUser.lifeExpectancyOnJupiter();
+    $('#jupiterlife').text(jupiterExpectancy );
     });
 });

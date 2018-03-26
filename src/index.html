@@ -1,26 +1,47 @@
-<title>Galatic Age</title>
-</head>
-<body>
-<div class="container">
-  <h1>Galactic Age </h1>
-    <form id="galaticage">
-      <div class="form-group">
-        <label for="birthdate">Please enter your birthdate</label>
-        <input class = "form-control" id="birthdate" name="birthdate" type="date" required><br>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Galatic Age</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>GALATIC AGE</h1>
+      <form id="galaticage">
+        <div class="form-group">
+          <label for="birthdate">Pick a day:</label>
+          <input id="birthdate" class="form-control" type="date">
+        </div>
+        <p>Select your gender:</p>
+        <select class="form-control" id="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+      <br>
+      <br>
+      <div class="results">
+        <div class="solarage">
+          <ul>
+            <li>Mercury age: <span id="ageMercury"></span></li>
+            <li>Mercury lifespan: <span id="mercurylife"></span> years</li>
+          </ul>
+          <ul>
+            <li>Venus age: <span id="ageVenus"></span></li>
+            <li>Venus lifespan: <span id="venuslife"></span> years</li>
+          </ul>
+          <ul>
+            <li>Mars age: <span id="ageMars"></span></li>
+            <li>Mars lifespan: <span id="marslife"></span> years</li>
+          </ul>
+          <ul>
+            <li>Jupiter age: <span id="ageJupiter"></span></li>
+            <li>Jupiter lifespan: <span id="jupiterlife"></span> years</li>
+          </ul>
+        </div>
       </div>
-      <button class="btn btn-primary" type="submit">Submit</button>
-    </form>
-
-  <p>The date is: <span id="dateShow"></span></p>
-  <p>You entered this birthdate: <span id="birthdateShow"></span></p>
-
-  <h3>Your age around the Solar System</h3>
-  
-  <p>Your current age on Mercury is: <span id="ageMercury"></span></p>
-  <p>Your current age on Venus is: <span id="ageVenus"></span></p>
-  <p>Your current age on Mars is: <span id="ageMars"></span></p>
-  <p>Your current age on Jupiter is: <span id="ageJupiter"></span></p>
-
-</div>
-</body>
+    </div>
+  </body>
 </html>

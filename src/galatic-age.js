@@ -2,7 +2,19 @@ export class Age {
   constructor(birthdate, gender) {
     this.birthdate = birthdate;
     this.gender = gender;
+
+    const idealAge = 80;
+
+    if(gender === "Female"){
+      this.lifeExpectancy = idealAge * .90;
+
+    } else if (gender === "Male"){
+      this.lifeExpectancy = idealAge * .95 * .90;
+
+    }  else {
+      this.lifeExpectancy = idealAge;
     }
+  }
 
 
   ageOnEarth() {
@@ -10,6 +22,7 @@ export class Age {
     let today = new Date();
     let calcAge = today - birthdate;
     let ageInYears = Math.floor(calcAge/(365.25 * 24 * 60 * 60 * 1000 ));
+
     return ageInYears;
   }
 
@@ -22,7 +35,7 @@ export class Age {
 
 
   ageOnMercury() {
-    let mercuryAge = parseInt(this.ageOnEarth()/0.24); =
+    let mercuryAge = parseInt(this.ageOnEarth()/0.24);
     return mercuryAge;
   }
 
@@ -41,4 +54,23 @@ export class Age {
     return jupiterAge;
   }
 
-    }
+  lifeExpectancyOnMercury() {
+    let mercuryLifeExpectancy = Math.floor(this.lifeExpectancy/0.24);
+    return mercuryLifeExpectancy;
+  }
+
+  lifeExpectancyOnVenus() {
+    let venusLifeExpectancy = Math.floor(this.lifeExpectancy/0.62);
+    return venusLifeExpectancy;
+  }
+
+  lifeExpectancyOnMars() {
+    let marsLifeExpectancy = Math.floor(this.lifeExpectancy/1.88);
+    return marsLifeExpectancy;
+  }
+
+  lifeExpectancyOnJupiter() {
+    let jupiterLifeExpectancy = Math.floor(this.lifeExpectancy/11.86);
+    return jupiterLifeExpectancy;
+  }
+}
