@@ -13,6 +13,8 @@ export class Age {
     return ageInYears;
   }
 
+
+
   seconds(){
     let ageInSecs = parseInt(this.ageOnEarth() * 365 * 24 * 60 * 60);
     return ageInSecs;
